@@ -1,21 +1,12 @@
-Ansible pre-commit hooks
-########################
+Python pre-commit hooks
+#######################
 
-.. image:: https://travis-ci.org/adarnimrod/ansible-pre-commit.svg?branch=master
-    :target: https://travis-ci.org/adarnimrod/ansible-pre-commit
+.. image:: https://travis-ci.org/adarnimrod/python-pre-commit.svg?branch=master
+    :target: https://travis-ci.org/adarnimrod/python-pre-commit
 
 Ansible `pre-commit <http://pre-commit.com/>`_ hooks.
 
-- ansible-syntax-check: The hook runs
-  :code:`ansible --syntax-check` against playbooks declared.
-- ansible-vault-check: The hook verifies that files that have :code:`vault` in
-  the filename are indeed vaulted.
-
-Dependencies
-------------
-
-- Ansible.
-- Pre-commit.
+- :code:`piprot`: Checks your requirements files for out of date packages.
 
 Installation
 ------------
@@ -24,23 +15,10 @@ Add the following to your :code:`.pre-commit-config.yaml`:
 
 .. code:: yaml
 
-    - repo: https://www.shore.co.il/git/ansible-pre-commit/
-      sha: v0.4.0
+    - repo: https://www.shore.co.il/git/python-pre-commit/
+      sha: v0.1.0
       hooks:
-      - id: ansible-syntax-check
-        # In case you want to specify other playbook files:
-        files: playbook.yml
-      - id: ansible-vault-check
-
-And run :code:`pre-commit autoupdate` to update the hooks. In case your
-:code:`roles` directory isn't in the same directory as the playbook you're
-testing or at :code:`/etc/ansible/roles` you need to declare the roles search
-path in :code:`ansible.cfg` in the root of the repo like so:
-
-.. code::
-
-    [defaults]
-    roles_path=path/to/roles/directory:path/to/another/roles/directory
+      - id: piprot
 
 License
 -------
