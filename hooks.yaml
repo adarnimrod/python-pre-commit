@@ -6,3 +6,15 @@
   entry: piprot
   args: ['--outdated']
   files: 'requirements.*\.txt$'
+- id: reStructuredText
+  name: Checks if long string meta-data syntax are reStructuredText-compliant.
+  language: python
+  entry: python
+  args: ['setup.py', 'check', '--strict', '--restructuredtext', '--']
+  files: setup\.py
+- id: metadata
+  name: Verify meta-data
+  language: python
+  entry: python
+  args: ['setup.py', 'check', '--strict', '--metadata', '--']
+  files: setup\.py

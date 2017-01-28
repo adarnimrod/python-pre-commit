@@ -5,3 +5,8 @@
     -   id: check-yaml
     -   id: check-merge-conflict
     -   id: flake8
+-   repo: ./
+    sha: HEAD
+    hooks:
+    -   id: reStructuredText
+    -   id: metadata

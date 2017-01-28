@@ -7,6 +7,9 @@ Python pre-commit hooks
 Ansible `pre-commit <http://pre-commit.com/>`_ hooks.
 
 - :code:`piprot`: Checks your requirements files for out of date packages.
+- :code:`metadata`: Verifies the meta-data in :code:`setup.py`.
+- :code:`reStructuredText`: Checks if long string meta-data syntax are
+  reStructuredText-compliant.
 
 Installation
 ------------
@@ -19,6 +22,8 @@ Add the following to your :code:`.pre-commit-config.yaml`:
       sha: v0.1.0
       hooks:
       - id: piprot
+      - id: metadata
+      - id: reStructuredText
 
 License
 -------
