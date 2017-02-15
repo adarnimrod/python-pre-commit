@@ -16,7 +16,7 @@ Add the following to your :code:`.pre-commit-config.yaml`:
 .. code:: yaml
 
     - repo: https://www.shore.co.il/git/python-pre-commit/
-      sha: v0.1.0
+      sha: v0.2.0
       hooks:
       - id: piprot
 
