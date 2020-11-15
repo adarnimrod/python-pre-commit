@@ -15,7 +15,7 @@ Add the following to your :code:`.pre-commit-config.yaml`:
 
 .. code:: yaml
 
-    - repo: https://www.shore.co.il/git/python-pre-commit/
+    - repo: https://git.shore.co.il/nimrod/python-pre-commit.git
       sha: v0.2.0
       hooks:
       - id: piprot
@@ -32,4 +32,4 @@ Author Information
 Nimrod Adar, `contact me <nimrod@shore.co.il>`_ or visit my `website
 <https://www.shore.co.il/>`_. Patches are welcome via `git send-email
 <http://git-scm.com/book/en/v2/Git-Commands-Email>`_. The repository is located
-at: https://www.shore.co.il/git/.
+at: https://git.shore.co.il/nimrod/.
