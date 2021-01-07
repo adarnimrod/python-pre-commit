@@ -1,0 +1,23 @@
+---
+include:
+  - project: shore/ci-templates
+    file: templates/pre-commit.yml
+
+install:
+  stage: test
+  image: python:$tag
+  before_script:
+    - pip install docutils pygments
+  script:
+    - python setup.py check --verbose --metadata --restructuredtext --strict
+    - pip install .
+  variables:
+    XDG_CACHE_HOME: "$CI_PROJECT_DIR/.cache"
+  cache:
+    paths:
+      - .cache/
+  parallel:
+    matrix:
+      - tag:
+          - "2.7-slim"
+          - "3.6-slim"

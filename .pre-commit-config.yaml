@@ -1,7 +1,93 @@
--   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: cf550fcab3f12015f8676b8278b30e1a5bc10e70
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
     hooks:
-    -   id: check-added-large-files
-    -   id: check-yaml
-    -   id: check-merge-conflict
-    -   id: flake8
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+        files: Pipfile
+      - id: trailing-whitespace
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v0.14.3
+    hooks:
+      - id: detect-secrets
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.25.0
+    hooks:
+      - id: yamllint
+
+  - repo: https://github.com/amperser/proselint/
+    rev: 0.10.2
+    hooks:
+      - id: proselint
+        types: [plain-text]
+        exclude: LICENSE
+
+  - repo: https://github.com/ambv/black
+    rev: 20.8b1
+    hooks:
+      - id: black
+        args:
+          - |
+              --line-length=79
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-markup
+    rev: v1.0.1
+    hooks:
+      - id: rst-linter
+
+  - repo: https://github.com/myint/rstcheck.git
+    rev: master
+    hooks:
+      - id: rstcheck
+
+  - repo: https://github.com/PyCQA/prospector
+    rev: 1.3.1
+    hooks:
+      - id: prospector
+        args:
+          - |-
+            --max-line-length=79
+          - |-
+            --with-tool=pyroma
+          - |-
+            --with-tool=bandit
+          - |-
+            --without-tool=pep257
+          - |-
+            --doc-warnings
+          - |-
+            --test-warnings
+          - |-
+            --full-pep8
+          - |-
+            --strictness=high
+          - |-
+            --no-autodetect
+        additional_dependencies:
+          - bandit
+          - pyroma
+
+  - repo: https://gitlab.com/pycqa/flake8.git
+    rev: 3.8.4
+    hooks:
+      - id: flake8
+        args:
+          - |-
+            --doctests
+        additional_dependencies:
+          - flake8-bugbear
+
+  - repo: https://github.com/mgedmin/check-manifest
+    rev: '0.45'
+    hooks:
+      - id: check-manifest
+
+  - repo: https://github.com/pre-commit/pre-commit.git
+    rev: v2.9.3
+    hooks:
+      - id: validate_manifest
