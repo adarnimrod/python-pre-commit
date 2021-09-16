@@ -1,11 +1,14 @@
 Python pre-commit hooks
 #######################
 
+**This project has been discontinued and has been replaced by** `pre-commit-hooks
+<https://git.shore.co.il/nimrod/pre-commit-hooks>`_
+
 .. image:: https://git.shore.co.il/nimrod/python-pre-commit/badges/master/pipeline.svg
     :target: https://git.shore.co.il/nimrod/python-pre-commit/-/commits/master
     :alt: pipeline status
 
-Ansible `pre-commit <http://pre-commit.com/>`_ hooks.
+Python `pre-commit <http://pre-commit.com/>`_ hooks.
 
 - :code:`piprot`: Checks your requirements files for out of date packages.
 
